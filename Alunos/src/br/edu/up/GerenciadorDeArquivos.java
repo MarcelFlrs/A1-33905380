@@ -99,10 +99,22 @@ public class GerenciadorDeArquivos {
             FileWriter arquivoGravar = new FileWriter(arquivoResumo);
             PrintWriter gravador = new PrintWriter(arquivoGravar);
 
-            gravador.println("matricula;nome;nota");
-            for (Aluno aluno : alunos) {
-                gravador.println(aluno.toCSV());
-            }
+            int quantidadeAlunos = calcularQuantidadeAlunos(alunos);
+            int quantidadeAprovados = calcularQuantidadeAprovados(alunos);
+            int quantidadeReprovados = calcularQuantidadeReprovados(alunos);
+            double menorNota = calcularMenorNota(alunos);
+            double maiorNota = calcularMaiorNota(alunos);
+            double mediaGeral = calcularMediaGeral(alunos);
+
+            gravador.println(
+                    "quantidadeAlunos;quantidadeAprovados;quantidadeReprovados;menorNota;maiorNota;mediaGeral");
+            gravador.println(
+                    quantidadeAlunos + ";" +
+                    quantidadeAprovados + ";" +
+                    quantidadeReprovados + ";" +
+                    menorNota + ";" +
+                    maiorNota + ";" +
+                    mediaGeral);
 
             gravador.close();
             return true;
