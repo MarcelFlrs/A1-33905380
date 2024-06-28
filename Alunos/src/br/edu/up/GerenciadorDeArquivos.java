@@ -1,7 +1,6 @@
 package br.edu.up;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -9,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GerenciadorDeArquivos {
-    private String header = "";
     private String arquivoAlunos = "C:\\Users\\autologon\\Documents\\GitHub\\A1-33905380\\Alunos\\src\\br\\edu\\up\\alunos.csv";
     private String arquivoResumo = "C:\\Users\\autologon\\Documents\\GitHub\\A1-33905380\\Alunos\\src\\br\\edu\\up\\resumo.csv";
 

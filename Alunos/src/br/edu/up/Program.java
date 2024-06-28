@@ -1,5 +1,5 @@
 package br.edu.up;
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class Program {
@@ -22,9 +22,9 @@ public class Program {
 
         if (gArquivos.gravarAlunoLista(listaAlunos) == true) {
             System.out.println("Arquivo Gravado com sucesso!");
-        }else{
+        } else {
             System.out.println("Falha ao gravar arquivo");
         }
-        
+
     }
 }
