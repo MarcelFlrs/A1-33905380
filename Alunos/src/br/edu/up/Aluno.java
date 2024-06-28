@@ -5,10 +5,10 @@ public class Aluno {
     private String nome;
     private String nota;
 
-    public Aluno(String matricula, String nome, String nota2) {
+    public Aluno(String matricula, String nome, String nota) {
         this.matricula = matricula;
         this.nome = nome;
-        this.nota = nota2;
+        this.nota = nota;
     }
 
     public String getMatricula() {
@@ -42,7 +42,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "\nAluno [matricula= " + matricula + " | nome= " + nome + " | nota= " + nota + "]";
+        return "\nAluno [matricula = " + matricula + " | nome = " + nome + " | nota = " + nota + "]";
     }
 
 }
