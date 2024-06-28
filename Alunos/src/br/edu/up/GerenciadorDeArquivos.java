@@ -40,7 +40,6 @@ public class GerenciadorDeArquivos {
         return listaDeAlunos;
     }
 
-    
     private int calcularQuantidadeAlunos(List<Aluno> alunos) {
         return alunos.size();
     }
@@ -63,6 +62,28 @@ public class GerenciadorDeArquivos {
             }
         }
         return count;
+    }
+
+    private double calcularMenorNota(List<Aluno> alunos) {
+        double menorNota = Double.MAX_VALUE;
+        for (Aluno aluno : alunos) {
+            double nota = Double.parseDouble(aluno.getNota().replace(",", "."));
+            if (nota < menorNota) {
+                menorNota = nota;
+            }
+        }
+        return menorNota;
+    }
+
+    private double calcularMaiorNota(List<Aluno> alunos) {
+        double maiorNota = Double.MIN_VALUE;
+        for (Aluno aluno : alunos) {
+            double nota = Double.parseDouble(aluno.getNota().replace(",", "."));
+            if (nota > maiorNota) {
+                maiorNota = nota;
+            }
+        }
+        return maiorNota;
     }
 
     public boolean gravarAlunoLista(List<Aluno> alunos) {
