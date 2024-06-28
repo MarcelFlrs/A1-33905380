@@ -86,6 +86,14 @@ public class GerenciadorDeArquivos {
         return maiorNota;
     }
 
+    private double calcularMediaGeral(List<Aluno> alunos) {
+        double soma = 0.0;
+        for (Aluno aluno : alunos) {
+            soma += Double.parseDouble(aluno.getNota().replace(",", "."));
+        }
+        return soma / alunos.size();
+    }
+
     public boolean gravarAlunoLista(List<Aluno> alunos) {
         try {
             FileWriter arquivoGravar = new FileWriter(arquivoResumo);
