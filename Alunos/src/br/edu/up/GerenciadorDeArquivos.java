@@ -40,6 +40,31 @@ public class GerenciadorDeArquivos {
         return listaDeAlunos;
     }
 
+    
+    private int calcularQuantidadeAlunos(List<Aluno> alunos) {
+        return alunos.size();
+    }
+
+    private int calcularQuantidadeAprovados(List<Aluno> alunos) {
+        int count = 0;
+        for (Aluno aluno : alunos) {
+            if (Double.parseDouble(aluno.getNota().replace(",", ".")) >= 6.0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int calcularQuantidadeReprovados(List<Aluno> alunos) {
+        int count = 0;
+        for (Aluno aluno : alunos) {
+            if (Double.parseDouble(aluno.getNota().replace(",", ".")) < 6.0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public boolean gravarAlunoLista(List<Aluno> alunos) {
         try {
             FileWriter arquivoGravar = new FileWriter(arquivoResumo);
